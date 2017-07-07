@@ -20,6 +20,12 @@ template '/var/www/html/index.html' do
   action :create
 end
 
+cookbook_file '/var/www/html/test.html' do
+  source 'test.html'
+  #action :create
+end
+
+
 service 'httpd' do
   action :start
 end
