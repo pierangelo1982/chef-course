@@ -25,6 +25,9 @@ cookbook_file '/var/www/html/test.html' do
   #action :create
 end
 
+remote_file '/var/www/html/pierangelo.jpg' do
+  source 'https://avatars3.githubusercontent.com/u/4020950'
+end
 
 service 'httpd' do
   action :start
