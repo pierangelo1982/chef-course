@@ -18,6 +18,7 @@ template '/var/www/html/index.html' do
     :email => 'pierangelo1982@gmail.com'
   )
   action :create
+  #notifies :restart, 'service[httpd]', :immediately
 end
 
 
@@ -63,7 +64,8 @@ end
 
 
 service 'httpd' do
-  action :start
+  action [:enable, :start]
+  subscribes :restart, 'template[/var/www/html/index.html]', :immediately
 end
 
 
