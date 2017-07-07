@@ -19,5 +19,8 @@ package 'tree'
 
 template '/etc/motd' do
   source 'motd.erb'
+  variables(
+    :name => 'pierangelo'
+  )
   action :create
 end
